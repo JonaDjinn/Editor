@@ -59,6 +59,19 @@
       border-radius: 8px;
       padding: 30px;
     }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .gallery a:hover img {
+      transform: scale(1.05);
+    }
     .footer {
       text-align: center;
       padding: 20px;
@@ -91,6 +104,7 @@
     <div class="cta-buttons">
       <a href="#showreel">Watch Showreel</a>
       <a href="#contact">Hire Me</a>
+      <a href="https://www.instagram.com/of_djinn/" target="_blank">Instagram</a>
     </div>
   </header>
 
@@ -104,18 +118,29 @@
     <h2>Projects</h2>
     <div class="projects">
       <div class="project-card">
-  <h3>Travel Reel – Instagram</h3>
-  <p>Role: Editor</p>
-  <p>Tools: Premiere Pro</p>
-  <p>Fast-paced travel montage for a lifestyle influencer.</p>
-  <p><a href="https://www.youtube.com/shorts/moAy9mdCTD8" target="_blank">Watch</a></p>
-</div>
+        <h3>Travel Reel – Instagram</h3>
+        <p>Role: Editor</p>
+        <p>Tools: Premiere Pro</p>
+        <p>Fast-paced travel montage for a lifestyle influencer.</p>
+        <p><a href="https://www.youtube.com/shorts/moAy9mdCTD8" target="_blank">Watch</a></p>
+      </div>
       <div class="project-card">
         <h3>Music Video – Indie Band</h3>
         <p>Role: Editor & Colorist</p>
         <p>Tools: DaVinci Resolve</p>
         <p>Cinematic edit with stylized grading and VFX.</p>
       </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="gallery">
+      <a href="https://www.instagram.com/of_djinn/p/CBQhymvlBxQ/" target="_blank"><img src="https://www.instagram.com/p/CBQhymvlBxQ/media/?size=l" alt="Instagram Post 1"></a>
+      <a href="https://www.instagram.com/of_djinn/p/CDCGvdAlLHc/" target="_blank"><img src="https://www.instagram.com/p/CDCGvdAlLHc/media/?size=l" alt="Instagram Post 2"></a>
+      <a href="https://www.instagram.com/of_djinn/p/B84CUB8lxUk/" target="_blank"><img src="https://www.instagram.com/p/B84CUB8lxUk/media/?size=l" alt="Instagram Post 3"></a>
+      <a href="https://www.instagram.com/of_djinn/p/B0jXMxZlWxc/" target="_blank"><img src="https://www.instagram.com/p/B0jXMxZlWxc/media/?size=l" alt="Instagram Post 4"></a>
+      <a href="https://www.instagram.com/of_djinn/p/Bzv05Xilrl6/" target="_blank"><img src="https://www.instagram.com/p/Bzv05Xilrl6/media/?size=l" alt="Instagram Post 5"></a>
     </div>
   </section>
 
