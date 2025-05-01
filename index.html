@@ -38,11 +38,32 @@
       border-radius: 6px;
       font-weight: bold;
     }
-    .showreel iframe {
+    .showreel-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .showreel-video, .showreel-images {
+      flex: 1 1 480px;
+    }
+    .showreel-video iframe {
       width: 100%;
-      height: 500px;
+      height: 400px;
       border: none;
       border-radius: 8px;
+    }
+    .showreel-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .showreel-images a img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .showreel-images a:hover img {
+      transform: scale(1.05);
     }
     .projects {
       display: grid;
@@ -108,10 +129,19 @@
     </div>
   </header>
 
-  <section id="showreel" class="showreel">
-    <h2>Showreel</h2>
-    <p>Highlighting some of my best edits in a minute.</p>
-    <iframe src="https://www.youtube.com/embed/7kYG0RYKSI0" allowfullscreen></iframe>
+  <section id="showreel">
+    <h2>Showreel & Visuals</h2>
+    <div class="showreel-grid">
+      <div class="showreel-video">
+        <iframe src="https://www.youtube.com/embed/7kYG0RYKSI0" allowfullscreen></iframe>
+      </div>
+      <div class="showreel-images">
+        <a href="https://www.instagram.com/of_djinn/p/CBQhymvlBxQ/" target="_blank"><img src="https://www.instagram.com/p/CBQhymvlBxQ/media/?size=l" alt="Instagram Post 1"></a>
+        <a href="https://www.instagram.com/of_djinn/p/CDCGvdAlLHc/" target="_blank"><img src="https://www.instagram.com/p/CDCGvdAlLHc/media/?size=l" alt="Instagram Post 2"></a>
+        <a href="https://www.instagram.com/of_djinn/p/B84CUB8lxUk/" target="_blank"><img src="https://www.instagram.com/p/B84CUB8lxUk/media/?size=l" alt="Instagram Post 3"></a>
+        <a href="https://www.instagram.com/of_djinn/p/B0jXMxZlWxc/" target="_blank"><img src="https://www.instagram.com/p/B0jXMxZlWxc/media/?size=l" alt="Instagram Post 4"></a>
+      </div>
+    </div>
   </section>
 
   <section id="projects">
