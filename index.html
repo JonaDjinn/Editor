@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jonathan Lalrinfela | Video Editor Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0e0e0e;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+    header, section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    h1, h2, h3 {
+      color: #00ffe1;
+    }
+    .hero {
+      text-align: center;
+      padding-top: 120px;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+    }
+    .cta-buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      background: #00ffe1;
+      color: #000;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .showreel iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 8px;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: #1c1c1c;
+      padding: 16px;
+      border-radius: 8px;
+    }
+    .about, .contact {
+      background: #1a1a1a;
+      border-radius: 8px;
+      padding: 30px;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+    }
+    button {
+      background: #00ffe1;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Hi, I'm Jonathan Lalrinfela</h1>
+    <p>Video Editor & Visual Storyteller</p>
+    <div class="cta-buttons">
+      <a href="#showreel">Watch Showreel</a>
+      <a href="#contact">Hire Me</a>
+    </div>
+  </header>
+
+  <section id="showreel" class="showreel">
+    <h2>Showreel</h2>
+    <p>Highlighting some of my best edits in a minute.</p>
+    <iframe src="https://www.youtube.com/embed/7kYG0RYKSI0" allowfullscreen></iframe>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+  <h3>Travel Reel – Instagram</h3>
+  <p>Role: Editor</p>
+  <p>Tools: Premiere Pro</p>
+  <p>Fast-paced travel montage for a lifestyle influencer.</p>
+  <p><a href="https://www.youtube.com/shorts/moAy9mdCTD8" target="_blank">Watch</a></p>
+</div>
+      <div class="project-card">
+        <h3>Music Video – Indie Band</h3>
+        <p>Role: Editor & Colorist</p>
+        <p>Tools: DaVinci Resolve</p>
+        <p>Cinematic edit with stylized grading and VFX.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>I'm Jonathan Lalrinfela, a 33-year-old passionate video editor with a love for storytelling, rhythm, and impactful visuals. I specialize in social media edits, music videos, and branded content.</p>
+    <p><strong>Tools:</strong> Premiere Pro, After Effects, DaVinci Resolve, CapCut</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Tell me about your project..."></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p>Email me at: <strong>blogjonjon@gmail.com</strong><br>Phone: <strong>9873365487</strong></p>
+  </section>
+
+  <div class="footer">
+    <p>&copy; 2025 Jonathan Lalrinfela | Portfolio built with ❤️</p>
+  </div>
+
+</body>
+</html>
