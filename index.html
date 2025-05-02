@@ -6,12 +6,19 @@
   <title>Jonathan Lalrinfela | Video Editor Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: #1e1e2f;
+      --text-color: #f5f5f5;
+      --accent-color: #00ffd5;
+      --highlight: #ff4eb5;
+    }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #0e0e0e;
-      color: #ffffff;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       line-height: 1.6;
+      transition: background 0.5s, color 0.5s;
     }
     header, section {
       padding: 60px 20px;
@@ -19,7 +26,7 @@
       margin: 0 auto;
     }
     h1, h2, h3 {
-      color: #00ffe1;
+      color: var(--accent-color);
     }
     .hero {
       text-align: center;
@@ -32,35 +39,45 @@
       display: inline-block;
       margin: 10px;
       padding: 12px 24px;
-      background: #00ffe1;
+      background: var(--accent-color);
       color: #000;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
+      transition: background 0.3s;
+    }
+    .cta-buttons a:hover {
+      background: var(--highlight);
     }
     .slider-container {
       position: relative;
       width: 100%;
       overflow: hidden;
       margin-bottom: 40px;
+      border-radius: 12px;
     }
     .slider-track {
       display: flex;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s ease-in-out;
     }
     .slider-track iframe {
       width: 100%;
       flex-shrink: 0;
       height: 300px;
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .slider-buttons {
       text-align: center;
       margin-bottom: 20px;
     }
     .slider-buttons button {
-      background: #00ffe1;
+      background: var(--accent-color);
       color: #000;
       padding: 10px 20px;
       margin: 0 10px;
@@ -68,20 +85,25 @@
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
+      transition: background 0.3s;
     }
-    .showreel-images {
+    .slider-buttons button:hover {
+      background: var(--highlight);
+    }
+    .showreel-images, .gallery {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
     }
-    .showreel-images img {
+    .showreel-images img, .gallery img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 12px;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .showreel-images img:hover {
+    .showreel-images img:hover, .gallery img:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 10px var(--highlight);
     }
     .modal {
       display: none;
@@ -94,28 +116,15 @@
       background-color: rgba(0, 0, 0, 0.9);
       justify-content: center;
       align-items: center;
+      animation: fadeIn 0.5s ease;
     }
     .modal img {
       max-width: 90%;
       max-height: 80%;
-      border-radius: 8px;
+      border-radius: 12px;
     }
     .modal:target {
       display: flex;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
     }
     .footer {
       text-align: center;
@@ -129,15 +138,21 @@
       margin: 10px 0;
       border: none;
       border-radius: 6px;
+      background: #333;
+      color: #fff;
     }
     button[type="submit"] {
-      background: #00ffe1;
+      background: var(--accent-color);
       color: #000;
       padding: 10px 20px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
+      transition: background 0.3s;
+    }
+    button[type="submit"]:hover {
+      background: var(--highlight);
     }
   </style>
 </head>
@@ -165,6 +180,7 @@
         <iframe src="https://www.youtube.com/embed/moAy9mdCTD8" allowfullscreen></iframe>
         <iframe src="https://www.youtube.com/embed/sCuoM0FrNFM" allowfullscreen></iframe>
         <iframe src="https://www.youtube.com/embed/15QLrX5jtwc" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/uFJ0uuExmFc" allowfullscreen></iframe>
       </div>
     </div>
     <div class="showreel-images">
