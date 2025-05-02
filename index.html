@@ -82,7 +82,7 @@
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 15px;
       padding-top: 20px;
     }
@@ -94,6 +94,25 @@
     }
     .gallery img:hover {
       transform: scale(1.05);
+    }
+    .scrolling-gallery {
+      display: flex;
+      gap: 15px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .scrolling-gallery img {
+      width: 200px;
+      border-radius: 12px;
+      animation: scrollImages 30s linear infinite;
+    }
+    @keyframes scrollImages {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
     }
     .lightbox {
       position: fixed;
@@ -162,6 +181,9 @@
     <div class="gallery">
       <img src="https://i.postimg.cc/zvKSjxBN/1.jpg" alt="Gallery Image 1">
       <img src="https://i.postimg.cc/dQyBwV9f/2.jpg" alt="Gallery Image 2">
+    </div>
+
+    <div class="scrolling-gallery">
       <img src="https://i.postimg.cc/RF3T3SxN/3.jpg" alt="Gallery Image 3">
       <img src="https://i.postimg.cc/CLCsnrXH/4.jpg" alt="Gallery Image 4">
       <img src="https://i.postimg.cc/pLqQqh2m/5.jpg" alt="Gallery Image 5">
