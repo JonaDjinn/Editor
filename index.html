@@ -38,19 +38,36 @@
       border-radius: 6px;
       font-weight: bold;
     }
-    .showreel-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .showreel-video, .showreel-images {
-      flex: 1 1 480px;
-    }
-    .showreel-video iframe {
+    .slider-container {
+      position: relative;
       width: 100%;
-      height: 400px;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .slider-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .slider-track iframe {
+      width: 100%;
+      flex-shrink: 0;
+      height: 300px;
       border: none;
       border-radius: 8px;
+    }
+    .slider-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .slider-buttons button {
+      background: #00ffe1;
+      color: #000;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
     }
     .showreel-images {
       display: grid;
@@ -60,25 +77,31 @@
     .showreel-images img {
       width: 100%;
       border-radius: 8px;
+      cursor: pointer;
       transition: transform 0.3s ease;
     }
     .showreel-images img:hover {
       transform: scale(1.05);
     }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
     }
-    .project-card {
-      background: #1c1c1c;
-      padding: 16px;
+    .modal img {
+      max-width: 90%;
+      max-height: 80%;
       border-radius: 8px;
     }
-    .about, .contact {
-      background: #1a1a1a;
-      border-radius: 8px;
-      padding: 30px;
+    .modal:target {
+      display: flex;
     }
     .gallery {
       display: grid;
@@ -88,9 +111,10 @@
     .gallery img {
       width: 100%;
       border-radius: 8px;
+      cursor: pointer;
       transition: transform 0.3s ease;
     }
-    .gallery a:hover img {
+    .gallery img:hover {
       transform: scale(1.05);
     }
     .footer {
@@ -106,7 +130,7 @@
       border: none;
       border-radius: 6px;
     }
-    button {
+    button[type="submit"] {
       background: #00ffe1;
       color: #000;
       padding: 10px 20px;
@@ -130,50 +154,39 @@
   </header>
 
   <section id="showreel">
-    <h2>Showreel & Visuals</h2>
-    <div class="showreel-grid">
-      <div class="showreel-video">
+    <h2>Showreel</h2>
+    <div class="slider-buttons">
+      <button onclick="prevSlide()">Previous</button>
+      <button onclick="nextSlide()">Next</button>
+    </div>
+    <div class="slider-container">
+      <div class="slider-track" id="slider">
         <iframe src="https://www.youtube.com/embed/7kYG0RYKSI0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/moAy9mdCTD8" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/sCuoM0FrNFM" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/15QLrX5jtwc" allowfullscreen></iframe>
       </div>
-      <div class="showreel-images">
-        <img src="https://i.postimg.cc/zvKSjxBN/1.jpg" alt="Visual 1">
-        <img src="https://i.postimg.cc/dQyBwV9f/2.jpg" alt="Visual 2">
-        <img src="https://i.postimg.cc/RF3T3SxN/3.jpg" alt="Visual 3">
-        <img src="https://i.postimg.cc/CLCsnrXH/4.jpg" alt="Visual 4">
-      </div>
+    </div>
+    <div class="showreel-images">
+      <a href="#img1"><img src="https://i.postimg.cc/zvKSjxBN/1.jpg" alt="Visual 1"></a>
+      <a href="#img2"><img src="https://i.postimg.cc/dQyBwV9f/2.jpg" alt="Visual 2"></a>
+      <a href="#img3"><img src="https://i.postimg.cc/RF3T3SxN/3.jpg" alt="Visual 3"></a>
+      <a href="#img4"><img src="https://i.postimg.cc/CLCsnrXH/4.jpg" alt="Visual 4"></a>
     </div>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>Travel Reel – Instagram</h3>
-        <p>Role: Editor</p>
-        <p>Tools: Premiere Pro</p>
-        <p>Fast-paced travel montage for a lifestyle influencer.</p>
-        <p><a href="https://www.youtube.com/shorts/moAy9mdCTD8" target="_blank">Watch</a></p>
-      </div>
-      <div class="project-card">
-        <h3>Music Video – Indie Band</h3>
-        <p>Role: Editor & Colorist</p>
-        <p>Tools: DaVinci Resolve</p>
-        <p>Cinematic edit with stylized grading and VFX.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="gallery">
+  <section class="gallery">
     <h2>Photo Gallery</h2>
-    <div class="gallery">
-      <img src="https://i.postimg.cc/zvKSjxBN/1.jpg" alt="Gallery Image 1">
-      <img src="https://i.postimg.cc/dQyBwV9f/2.jpg" alt="Gallery Image 2">
-      <img src="https://i.postimg.cc/RF3T3SxN/3.jpg" alt="Gallery Image 3">
-      <img src="https://i.postimg.cc/CLCsnrXH/4.jpg" alt="Gallery Image 4">
-      <img src="https://i.postimg.cc/pLqQqh2m/5.jpg" alt="Gallery Image 5">
-      <img src="https://i.postimg.cc/3wNX68Rn/6.jpg" alt="Gallery Image 6">
-    </div>
+    <a href="#img5"><img src="https://i.postimg.cc/pLqQqh2m/5.jpg" alt="Gallery Image 5"></a>
+    <a href="#img6"><img src="https://i.postimg.cc/3wNX68Rn/6.jpg" alt="Gallery Image 6"></a>
   </section>
+
+  <div class="modal" id="img1"><a href="#"><img src="https://i.postimg.cc/zvKSjxBN/1.jpg"></a></div>
+  <div class="modal" id="img2"><a href="#"><img src="https://i.postimg.cc/dQyBwV9f/2.jpg"></a></div>
+  <div class="modal" id="img3"><a href="#"><img src="https://i.postimg.cc/RF3T3SxN/3.jpg"></a></div>
+  <div class="modal" id="img4"><a href="#"><img src="https://i.postimg.cc/CLCsnrXH/4.jpg"></a></div>
+  <div class="modal" id="img5"><a href="#"><img src="https://i.postimg.cc/pLqQqh2m/5.jpg"></a></div>
+  <div class="modal" id="img6"><a href="#"><img src="https://i.postimg.cc/3wNX68Rn/6.jpg"></a></div>
 
   <section class="about">
     <h2>About Me</h2>
@@ -196,5 +209,25 @@
     <p>&copy; 2025 Jonathan Lalrinfela | Portfolio built with ❤️</p>
   </div>
 
+  <script>
+    let currentSlide = 0;
+    const slider = document.getElementById("slider");
+    const slides = slider.children.length;
+
+    function showSlide(index) {
+      if (index >= slides) index = 0;
+      if (index < 0) index = slides - 1;
+      slider.style.transform = `translateX(-${index * 100}%)`;
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+  </script>
 </body>
 </html>
